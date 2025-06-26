@@ -1,5 +1,5 @@
 import { Injectable,signal } from "@angular/core";
-import { Todo } from "../todo";
+import { CreateTodo, Todo } from "../todo";
 
 
 
@@ -15,7 +15,10 @@ export class TodoService {
      // This can be read publicly
     todos = this.#todos.asReadonly();
 
-    addTodo(todo: Todo) {
-        this.#todos.update((todos) => [...todos, todo] )
+    addTodo(todo: CreateTodo) {
+        this.#todos.update((todos) => [
+            ...todos,
+             {...todo, id: Date.now().toString()},
+            ]);
     }
 }
