@@ -1,6 +1,6 @@
 import { Component, inject, output } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule,Validators } from "@angular/forms";
-import { Todo } from '../../shared/interfaces/todo';
+import { CreateTodo, Todo } from '../../shared/interfaces/todo';
 
 @Component({
     selector:'app-todo-form',
@@ -25,5 +25,5 @@ export class TodoFormComponnent {
         description:[''],
     });
     
-    todoSubmitted = output<Todo>();
+    todoSubmitted = output<CreateTodo>();
 }
