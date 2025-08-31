@@ -7,7 +7,7 @@ import { TodoListComponent } from "./ui/todo-list.component";
 @Component({
   selector: 'app-home',
   template: `
-  <h2>This is the home component</h2>
+  <h2>This is my To Do app</h2>
   <app-todo-list [todos]="todoService.todos()"/>
   <app-todo-form (todoSubmitted)="todoService.addTodo($event)"/>
   `,
